@@ -6,16 +6,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
+- added `io.edgehog.devicemanager.apps.AvailableSigningKeys` interface
 - added `io.edgehog.devicemanager.apps.ContainerEvent` interface
+- added `io.edgehog.devicemanager.apps.CreateSigningKeyRequest` interface
 - added `io.edgehog.devicemanager.apps.EnvFileEvent` interface
 - added `io.edgehog.devicemanager.apps.FileBindEvent` interface
 - added `io.edgehog.devicemanager.apps.ImageEvent` interface
 - added `io.edgehog.devicemanager.apps.NetworkEvent` interface
+- added `io.edgehog.devicemanager.apps.SigningKeyCommand` interface
 - added `io.edgehog.devicemanager.apps.VolumeEvent` interface
 
 ### Changed
 
-- Add image pull policy to CreateImageRequest
+- Add image pull policy and verification key IDs to CreateImageRequest
 - Add more information to AvailableContainers
 - Add more information to AvailableImages
 

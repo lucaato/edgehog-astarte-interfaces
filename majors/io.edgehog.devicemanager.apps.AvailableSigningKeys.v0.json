@@ -1,0 +1,18 @@
+{
+  "interface_name": "io.edgehog.devicemanager.apps.AvailableSigningKeys",
+  "version_major": 0,
+  "version_minor": 1,
+  "type": "properties",
+  "ownership": "device",
+  "description": "The available signing keys for container image verification.",
+  "doc": "Exposes the container image signing keys available on the device.",
+  "mappings": [
+    {
+      "allow_unset": true,
+      "endpoint": "/%{signing_key_id}/present",
+      "type": "boolean",
+      "description": "Signing key availability",
+      "doc": "States whether the signing key with ID `signing_key_id` is present on the device."
+    }
+  ]
+}

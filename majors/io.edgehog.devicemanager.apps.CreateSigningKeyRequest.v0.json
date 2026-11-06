@@ -1,0 +1,30 @@
+{
+  "interface_name": "io.edgehog.devicemanager.apps.CreateSigningKeyRequest",
+  "version_major": 0,
+  "version_minor": 1,
+  "type": "datastream",
+  "ownership": "server",
+  "aggregation": "object",
+  "description": "Request to add a public signing key for container image verification.",
+  "doc": "The ttl of this datastream is short to keep the key data private.",
+  "mappings": [
+    {
+      "endpoint": "/signingKey/id",
+      "type": "string",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 600,
+      "reliability": "guaranteed",
+      "description": "Create Signing Key Request id",
+      "doc": "Unique id for the signing key."
+    },
+    {
+      "endpoint": "/signingKey/keyData",
+      "type": "binaryblob",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 600,
+      "reliability": "guaranteed",
+      "description": "Trusted public key data for image signature verification",
+      "doc": "Public key data (e.g., GPG keyring) used to verify container image signatures."
+    }
+  ]
+}

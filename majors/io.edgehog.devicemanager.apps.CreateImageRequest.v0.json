@@ -1,7 +1,7 @@
 {
   "interface_name": "io.edgehog.devicemanager.apps.CreateImageRequest",
   "version_major": 0,
-  "version_minor": 2,
+  "version_minor": 3,
   "type": "datastream",
   "ownership": "server",
   "aggregation": "object",
@@ -52,6 +52,15 @@
       "reliability": "guaranteed",
       "description": "Image pull policy",
       "doc": "Optional string enum for the pull policy of the image, with a default value of `IfNotPresent`. The allowed values are: [IfNotPresent, Always]."
+    },
+    {
+      "endpoint": "/image/verificationKeyIds",
+      "type": "stringarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 600,
+      "reliability": "guaranteed",
+      "description": "Signing key ids for image verification",
+      "doc": "Optional list of signing key IDs used to verify the image signature. If specified, the image must be signed by at least one of the referenced keys."
     }
   ]
 }
