@@ -1,0 +1,25 @@
+{
+  "interface_name": "io.edgehog.devicemanager.apps.RegistryPolicy",
+  "version_major": 0,
+  "version_minor": 1,
+  "type": "properties",
+  "ownership": "server",
+  "description": "Container image registry and repository allow/reject policy.",
+  "doc": "Configures a whitelist or blacklist of container registries and repositories on the device.",
+  "mappings": [
+    {
+      "endpoint": "/mode",
+      "type": "string",
+      "allow_unset": true,
+      "description": "Registry filtering mode.",
+      "doc": "Specifies whether the entries in `/repositories` are allowed or rejected. Allowed values: [Whitelist, Blacklist]. Unset returns to the default state configured on the device."
+    },
+    {
+      "endpoint": "/repositories",
+      "type": "stringarray",
+      "allow_unset": true,
+      "description": "List of registry and repository prefixes to allow or reject.",
+      "doc": "List of registry names and optional repository paths in the form `registry-host[:port][/repository-path]` to allow (when `/mode` is `Whitelist`) or reject (when `/mode` is `Blacklist`)."
+    }
+  ]
+}
